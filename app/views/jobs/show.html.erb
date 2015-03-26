@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<!--<h2>檢視新增</h2>-->
+<ol><h1><%= @job.title %></h1></ol>
+
+<table class="table table-hover">
+  <div class="social">
+    <tr>
+      <td><strong>工作標題：</td>
+      <td><%= @job.job_type %></td>
+    </tr>
+    <tr>
+      <td><strong>公司名稱：</strong></td>
+      <td><%= @job.company_name %></td>
+    </tr>  
+    <tr>
+      <td><strong>公司網站：</strong></td>
+      <td><%= @job.url %></td>
+    </tr> 
+    <tr>
+      <td><strong>工作類型：</strong></td> 
+      <td><%= @job.job_type %></td>
+    <tr>
+      <td><strong>工作職別：</strong></td>
+      <td><%= @job.occupation %></td>
+    </tr>
+    <tr>
+      <td><strong>公司地址：</strong></td>
+      <td><%= @job.location %></td>
+    </tr>
+    <tr>
+      <td><strong>工作描述：</strong></td>
+      <td><%= @job.description %></td>
+    </tr>
+    <tr>
+      <td><strong>相關訊息：</strong></td>
+      <td><%= @job.apply_information %></td>
+    </tr>
+    <tr>
+      <td><strong>截止時間：</strong></td>
+      <td><%= @job.deadline %></td>
+    </tr>  
+  </div>
+</table>
+
+<ol>
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Okay', jobs_path %>
+</ol>

@@ -1,0 +1,31 @@
+<%= simple_form_for (@job) do |f| %>
+  <!--<% if @job.errors.any? %>-->
+  <!--  <div id="error_explanation">-->
+  <!--    <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>-->
+
+  <!--    <ul>-->
+  <!--    <% @job.errors.full_messages.each do |message| %>-->
+  <!--      <li><%= message %></li>-->
+  <!--    <% end %>-->
+  <!--    </ul>-->
+  <!--  </div>-->
+  <!--<% end %>-->
+  
+  <%= f.input :title, label: '工作標題：' %>
+  <%= f.input :company_name, label: '公司名稱：' %>
+  <%= f.input :url, label: '公司網站：' %>
+  <%= f.label :"工作類型：" %>
+  <%= f.collection_radio_buttons :job_type, [['Full-time', 'Full-time'] ,['Part-time', 'Part-time'], ['Contract', 'Contract'], ['Internship', 'Internship'], ['Other', 'Other']], :first, :last %>
+  <br>
+  <%= f.label :"工作職別：" %>
+  <%= f.collection_radio_buttons :occupation, [['Web back-end', 'Web back-end'] ,['Web front-end', 'Web front-end'], ['Web-design', 'Web-design'], ['QA/Testing', 'QA/Testing'], ['Other', 'Other']], :first, :last %>
+  <br>
+  <%= f.input :location, label: '公司地址：' %>
+  <%= f.input :description, label: '工作描述：' %>
+  <%= f.input :apply_information, label: '相關訊息：' %>
+  <%= f.input :deadline, label: '截止時間：' %>
+  <br>
+  <%= f.button :submit, "確認送出" %>
+
+
+<% end %>
